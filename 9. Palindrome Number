@@ -1,0 +1,37 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+        int temp = x;
+        int m = 1;
+        int res = 0;
+          if(x>=0)
+          {
+              while(temp > 0)
+              {
+                  res++;
+                  temp /= 10;
+              }
+          }
+        while(res > 1)
+        {
+          m *= 10;
+            res--;
+        }
+        int a = 0;
+        int result = 0;
+        int tempx = x;
+        while(tempx>0)
+        {
+           a = tempx%10;
+            result += a*m;
+            m /= 10;
+            tempx /= 10;
+           
+        }
+        if( x == result)
+        {
+            return true;
+        }
+        else 
+            return false;
+    }
+}
