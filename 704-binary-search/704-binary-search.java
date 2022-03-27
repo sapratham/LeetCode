@@ -6,11 +6,11 @@ class Solution {
         while(left <= right){
              int mid =( left + right ) / 2;
             if(nums[mid] == target) return mid;
-            if(target > nums[left]){
-                left++;
+            if(target > nums[mid]){
+                left = mid + 1;
             }
-            if(target < nums[right]){
-                right--;
+            else{
+                right = mid - 1;
             }
         }
         return -1;
