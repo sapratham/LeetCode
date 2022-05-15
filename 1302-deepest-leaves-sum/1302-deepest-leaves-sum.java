@@ -14,18 +14,10 @@
  * }
  */
 class Solution {
-//     public int dfs(TreeNode root ){
-//         if(root == null){
-//             return 0;
-//         }
-//         int left = dfs(root.left );
-//         int right = dfs(root.right);
-        
-//         return Math.max(left , right ) + 1;
-//     }
+
     public int deepestLeavesSum(TreeNode root) {
         if(root == null) return 0;
-       // int count =  dfs(root);
+     
         int sum = 0;
         Queue<TreeNode> que = new ArrayDeque();
         que.add(root);
@@ -44,13 +36,7 @@ class Solution {
                 }
                 
             }
-            // count--;
-            //     if(count == 1){
-            //         while(que.size() != 0){
-            //             sum += que.remove().val;
-            //         }
-            //     }
-            
+         
         }
         return sum;
     }
