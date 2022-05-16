@@ -123,23 +123,23 @@ class Tree
 {
     //Function to return list containing elements of left view of binary tree.
     ArrayList<Integer> leftView(Node root)
-    {
+    {  
+        if(root == null) return new ArrayList<>();
       // Your code here
-      ArrayList<Integer> ans = new ArrayList<>();
-      if(root == null) return ans;
-      Queue<Node> que = new ArrayDeque<>();
-      que.add(root);
-      while(que.size() != 0){
-          int size = que.size();
-          ans.add(que.peek().data);
-          while(size-- > 0){
-          Node rnode = que.remove();
-              if(rnode.left != null) que.add(rnode.left);
-              if(rnode.right != null) que.add(rnode.right);
-              
-          }
-          
-      }
-      return ans;
+      ArrayList<Integer> arr = new ArrayList<>();
+     Queue<Node> que = new ArrayDeque<>();
+     que.add(root);
+     while(que.size() != 0){
+         int size = que.size();
+         arr.add(que.peek().data);
+         while(size-- > 0){
+             Node rem = que.remove();
+             if(rem.left != null) que.add(rem.left);
+             if(rem.right != null) que.add(rem.right);
+             
+         }
+         
+     }
+     return arr;
     }
 }
