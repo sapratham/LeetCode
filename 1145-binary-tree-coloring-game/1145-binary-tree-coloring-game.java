@@ -22,7 +22,7 @@ class Solution {
         
         int max = Math.max(otherside,Math.max(xleft , xright));
         int rest = n - max;
-        return (max < rest)? false:true;
+        return (max > rest)? true:false;
     }
     public int size(TreeNode node , int x){
         if(node == null) return 0;
