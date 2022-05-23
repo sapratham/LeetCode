@@ -33,7 +33,7 @@ class Solution {
         
         TreeNode node = new TreeNode();
         node.val = pre[prestart];
-        int index = map.getOrDefault(pre[prestart] , 0);
+        int index = map.get(pre[prestart]);
         int lhs = index - instart;
         
         node.left = construct(prestart + 1, preend + lhs , instart , index - 1 , pre , map);
