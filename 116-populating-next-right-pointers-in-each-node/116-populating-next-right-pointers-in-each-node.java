@@ -28,11 +28,14 @@ class Solution {
         while(p1 != null){
             Node p2 = p1;
             while(p2 != null){
-                if(p2.left != null)
-                p2.left.next = p2.right;
-                if(p2.right != null && p2.next != null)
-                p2.right.next = p2.next.left;
                 
+                if(p2.left != null){
+                  p2.left.next = p2.right;  
+                }
+                
+                if(p2.right != null && p2.next != null){
+                    p2.right.next = p2.next.left;
+                }
                 p2 = p2.next;
             }
             p1 = p1.left;
