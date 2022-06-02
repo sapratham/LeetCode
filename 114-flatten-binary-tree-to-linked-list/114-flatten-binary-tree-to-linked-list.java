@@ -16,19 +16,18 @@
 class Solution {
     public void flatten(TreeNode root) {
         if(root == null) return;
-        Queue<TreeNode> que = new LinkedList<>();
-        preOrderTraversal(root,que);
-        while(!que.isEmpty()){
-            TreeNode currNode = que.poll();
-            currNode.left = null;
-            currNode.right = que.peek();
+        Queue<TreeNode> que = new ArrayDeque<>();
+        preOrder(root , que);
+        while(que.size() != 0){
+            TreeNode node = que.remove();
+           node.left = null;
+            node.right = que.peek();
         }
     }
-        private void preOrderTraversal(TreeNode root, Queue<TreeNode> que){
-            if(root == null) return;
-            que.add(root);
-            preOrderTraversal(root.left, que);
-            preOrderTraversal(root.right,que);
-        }
-    
+    public void preOrder(TreeNode root , Queue<TreeNode> que){
+        if(root == null) return;
+        que.add(root);
+        preOrder(root.left , que);
+        preOrder(root.right , que);
+    }
 }
