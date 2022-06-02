@@ -14,20 +14,15 @@
  * }
  */
 class Solution {
+    TreeNode prev=null;
     public void flatten(TreeNode root) {
-        if(root == null) return;
-        Queue<TreeNode> que = new ArrayDeque<>();
-        preOrder(root , que);
-        while(que.size() != 0){
-            TreeNode node = que.remove();
-           node.left = null;
-            node.right = que.peek();
-        }
-    }
-    public void preOrder(TreeNode root , Queue<TreeNode> que){
-        if(root == null) return;
-        que.add(root);
-        preOrder(root.left , que);
-        preOrder(root.right , que);
+        //reverse postorder
+        if(root==null)
+            return;
+        flatten(root.right);
+        flatten(root.left);
+        root.right=prev;
+        root.left=null;
+        prev=root;
     }
 }
