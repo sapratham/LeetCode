@@ -1,23 +1,21 @@
 class Solution {
-    public void sortColors(int[] arr) {
-           int j = 0 , i = 0  , k = arr.length -1 ;
-   while(j <= k){
-       if(arr[j]== 0){
-           swap(arr,j,i);
-           i++; j++;
-       }
-    else if(arr[j] == 1){
-           j++;
-       }else{
-           swap(arr,j,k);
-           k--; 
-       }
-   }
+    public void sortColors(int[] nums) {
+      bubbleSort(nums , nums.length);  
     }
- public void swap(int[] arr, int i, int j){
-    int temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-  }
-    
+    public static void bubbleSort(int[] sort_arr, int len){
+        
+        for (int i=0;i<len-1;++i){
+
+            for(int j=0;j<len-i-1; ++j){
+
+                if(sort_arr[j+1]<sort_arr[j]){
+
+                    int swap = sort_arr[j];
+                    sort_arr[j] = sort_arr[j+1];
+                    sort_arr[j+1] = swap;
+
+                }
+            }
+        }
+    }
 }
