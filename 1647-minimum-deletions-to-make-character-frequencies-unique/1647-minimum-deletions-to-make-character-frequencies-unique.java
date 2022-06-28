@@ -2,7 +2,7 @@ class Solution {
     public int minDeletions(String s) {
         int count = 0;
         char[] arr = s.toCharArray();
-        Arrays.sort(arr);
+        
         int[] freq = new int[26];
     
         for(char i : arr){
