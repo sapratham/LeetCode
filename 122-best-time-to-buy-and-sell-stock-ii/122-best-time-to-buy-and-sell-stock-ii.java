@@ -1,25 +1,27 @@
 class Solution {
     
     public int maxProfit(int[] prices) {
-    int[][] dp = new int[prices.length + 1][2];
+    int[] prev = new int[2];
     for(int i = prices.length - 1 ; i >= 0 ; i--){
+        int[] curr = new int[2];
         for(int flag = 0 ; flag < 2 ; flag++){
             if(i == prices.length){
-                dp[i][flag] = 0;
+                curr[flag] = 0;
                 continue;
             }
             if(flag == 0){
-                int buyhere = -prices[i] + dp[i+1][1];
-                int notbuyhere = dp[i+1][0];
-                dp[i][flag] = Math.max(buyhere , notbuyhere);
+                int buyhere = -prices[i] + prev[1];
+                int notbuyhere = prev[0];
+                curr[flag] = Math.max(buyhere , notbuyhere);
             }else{
-                int sellhere = prices[i] + dp[i+1][0];
-                int notsellhere = dp[i+1][1];
-                dp[i][flag] = Math.max(sellhere , notsellhere);
-            }
+                int sellhere = prices[i] + prev[0];
+                int notsellhere = prev[1];
+                curr[flag] = Math.max(sellhere , notsellhere);
+            }   
         }
+        prev = curr;
     }
-        return dp[0][0];
+        return prev[0];
     }
 }
     // public int rec(int idx , int flag , int[] prices){ // memoization
