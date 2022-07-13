@@ -10,11 +10,11 @@ class Solution {
                 continue;
             }
             if(flag == 0){
-                int buyhere = -prices[i] + prev[1] - fee;
+                int buyhere = -prices[i] + prev[1] ;
                 int notbuyhere = prev[0];
                 curr[flag] = Math.max(buyhere , notbuyhere);
             }else{
-                int sellhere = prices[i] + prev[0];
+                int sellhere = prices[i] + prev[0] - fee;
                 int notsellhere = prev[1];
                 curr[flag] = Math.max(sellhere , notsellhere);
             }   
