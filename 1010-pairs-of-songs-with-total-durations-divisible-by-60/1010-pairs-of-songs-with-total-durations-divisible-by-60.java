@@ -5,7 +5,7 @@ class Solution {
         for(int t : time){
             int val = t % 60;
             if(val == 0){
-                count += freqmap[0];
+                count += freqmap[val];
             }else{
                 count += freqmap[60 - val];
             }
