@@ -2,7 +2,7 @@ class Solution {
     public List<Integer> countSmaller(int[] nums) {
         List<Integer> sorted = new ArrayList<>(nums.length);
         List<Integer> counts = new ArrayList<>(nums.length);
-        for (int i = nums.length - 1; i >= 0; --i) {
+        for (int i = nums.length - 1; i >= 0; i--) {
             int index = binarySearch(sorted, nums[i], 0, sorted.size());
             sorted.add(index, nums[i]);
             counts.add(index);
