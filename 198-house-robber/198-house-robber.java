@@ -10,9 +10,9 @@ class Solution {
             if(i >= nums.length){
                 continue;
             }
-            if(dp[i] != 0){
-                continue;
-            }
+            // if(dp[i] != 0){
+            //     continue;
+            // }
             int rob = nums[i] + dp[i + 2];
             int notrob = dp[i + 1];
             
