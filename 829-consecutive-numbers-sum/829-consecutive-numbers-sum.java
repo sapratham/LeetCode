@@ -3,7 +3,7 @@ class Solution {
         int res = 0;
         
         int k = 1;
-        int check = 0;
+        int check = 0; //  check = k * (k - 1) / 2 
         while(check < n){
             if((n - check) % k == 0){
                 res++;
