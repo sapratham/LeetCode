@@ -1,9 +1,6 @@
 class Solution {
     public void setZeroes(int[][] matrix) {
-        solve(matrix);
-    }
-    public void solve(int[][] matrix){
-                int col0 = 1, rows = matrix.length, cols = matrix[0].length;
+     int col0 = 1, rows = matrix.length, cols = matrix[0].length;
 
         for (int i = 0; i < rows; i++) {
             if (matrix[i][0] == 0) col0 = 0;
@@ -17,6 +14,6 @@ class Solution {
                 if (matrix[i][0] == 0 || matrix[0][j] == 0)
                     matrix[i][j] = 0;
             if (col0 == 0) matrix[i][0] = 0;
-        }
+        }  
     }
 }
