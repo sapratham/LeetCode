@@ -4,9 +4,9 @@ class Solution {
         for(int i = 0 ; i < s.length() ; i++){
             char ch = s.charAt(i);
             if(map.containsKey(ch)){
-                map.put(ch ,i - map.get(ch)- 1);
+               // map.put(ch ,i - map.get(ch)- 1);
                 int index = ch - 'a';
-                if(map.get(ch) != distance[index]){
+                if(i - map.get(ch)- 1 != distance[index]){
                     return false;
                 }
             }else{
